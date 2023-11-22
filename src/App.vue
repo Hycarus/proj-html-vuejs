@@ -30,7 +30,7 @@
         </div>
       </section>
     </div>
-    <section class="container">
+    <section id="section2" class="container">
       <div class="d-flex align-items-center justify-content-center">
         <div>
           <img class="w-100" src="/images/h5-img-2.jpg" alt="">
@@ -63,23 +63,27 @@
             v-for="(person, index) in store.thirdSection" />
         </div>
         <div class="pallino primo"
-          @click.stop="scroll(0, 0), this.pallino1Flag = !this.pallino1Flag, this.pallino2Flag = false, this.pallino3Flag = false"
+          @click.stop="scroll(0, 0), this.pallino1Flag = true, this.pallino2Flag = false, this.pallino3Flag = false"
           :class="{ 'active': this.pallino1Flag }">
         </div>
         <div class="pallino secondo"
-          @click.stop="scroll(1320, 0), this.pallino2Flag = !this.pallino2Flag, this.pallino1Flag = false, this.pallino3Flag = false"
+          @click.stop="scroll(1320, 0), this.pallino2Flag = true, this.pallino1Flag = false, this.pallino3Flag = false"
           :class="{ 'active': this.pallino2Flag }">
         </div>
         <div class="pallino terzo"
-          @click.stop="scroll(2640, 0), this.pallino3Flag = !this.pallino3Flag, this.pallino2Flag = false, this.pallino1Flag = false"
+          @click.stop="scroll(2640, 0), this.pallino3Flag = true, this.pallino2Flag = false, this.pallino1Flag = false"
           :class="{ 'active': this.pallino3Flag }">
         </div>
       </div>
+    </section>
+    <section id="section4" class="py-5 w-100 fs-5">
+      <Section4 />
     </section>
   </main>
 </template>
 
 <script>
+import Section4 from './components/Section4.vue'
 import CarouselMid from './components/CarouselMid.vue';
 import CardComponent from './components/CardComponent.vue';
 import CarouselTop from './components/CarouselTop.vue';
@@ -92,13 +96,15 @@ export default {
     HeaderComponent,
     CardComponent,
     CarouselMid,
+    Section4,
   },
   data() {
     return {
       store,
-      pallino1Flag: false,
+      pallino1Flag: true,
       pallino2Flag: false,
       pallino3Flag: false,
+
     }
   },
   methods: {
@@ -143,6 +149,10 @@ export default {
   color: $text_dark_grey;
 }
 
+.my-text-grey {
+  color: $text_grey;
+}
+
 header {
   z-index: 1000;
   padding-top: 10px;
@@ -161,6 +171,8 @@ header {
   margin-top: 60px;
   height: 700px;
 }
+
+
 
 .pallino {
   width: 12px;
