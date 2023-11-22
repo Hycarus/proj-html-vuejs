@@ -79,10 +79,34 @@
     <section id="section4" class="py-5 w-100 fs-5">
       <Section4 />
     </section>
+    <section id="section5" class="py-5">
+      <div class="container">
+        <h1 class="text-center">
+          Popular Online Courses
+        </h1>
+        <p class="text-center fs-5 pb-5">
+          Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat
+          ipsutis sem nibh id elit
+        </p>
+        <swiper id="my-pagination" :modules="modules" slides-per-view="3" :space-between="40"
+          :pagination="{ clickable: true }" :grabCursor="true" :loop="true" :navigation="true">
+          <swiper-slide class="d-flex" v-for="element in store.section5Card">
+            <CardSliderComponent :description="element.description" :category="element.category" :name="element.name"
+              :role="element.role" :price="element.price" :image="element.img" />
+          </swiper-slide>
+          <!-- <div class="my-pagination"></div> -->
+        </swiper>
+      </div>
+    </section>
   </main>
 </template>
 
 <script>
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/scss';
+import 'swiper/scss/pagination';
+import { Pagination } from 'swiper/modules';
+import CardSliderComponent from './components/CardSliderComponent.vue';
 import Section4 from './components/Section4.vue'
 import CarouselMid from './components/CarouselMid.vue';
 import CardComponent from './components/CardComponent.vue';
@@ -97,6 +121,9 @@ export default {
     CardComponent,
     CarouselMid,
     Section4,
+    CardSliderComponent,
+    Swiper,
+    SwiperSlide,
   },
   data() {
     return {
@@ -104,7 +131,8 @@ export default {
       pallino1Flag: true,
       pallino2Flag: false,
       pallino3Flag: false,
-
+      modules: [Pagination],
+      click: false,
     }
   },
   methods: {
@@ -126,7 +154,7 @@ export default {
   },
   created() {
     window.addEventListener('scroll', this.scrollHeader)
-  }
+  },
 }
 </script>
 
@@ -172,8 +200,6 @@ header {
   height: 700px;
 }
 
-
-
 .pallino {
   width: 12px;
   height: 12px;
@@ -206,5 +232,33 @@ header {
 .pallino.terzo {
   bottom: 50px;
   left: 53%;
+}
+
+#section5 {
+  border-top: 1px solid $text_light_grey;
+  background-image: url('/images/page-background-img.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom: 1px solid $text_light_grey;
+}
+
+#my-pagination {
+
+  --swiper-pagination-bullet-inactive-color: #188fc6 !important;
+  // --swiper-pagination-color: #ff0000;
+  // Colore dei pallini 
+  // --swiper-theme-color: #00ff00;
+  // Colore del pallino attivo 
+  --swiper-pagination-margin: 5px;
+  // Margine tra i pallini 
+  --swiper-pagination-opacity: 0.7;
+  // Opacità dei pallini 
+  --swiper-pagination-opacity-active: 1;
+  // Opacità del pallino attivo 
+  --swiper-pagination-bullet-size: 10px;
+  // Dimensioni dei pallini 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

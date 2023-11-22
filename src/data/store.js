@@ -662,4 +662,78 @@ export const store = reactive({
     ],
     activeIndex2: 1,
     scrolled: false,
+    section5Card: [
+        {
+            img: '/images/course-1-f-img.jpg',
+            name: 'Preston Marshall',
+            role: 'Business English',
+            description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa ducimus dicta soluta, maiores earum voluptate recusandae dolore!',
+            category: 'Languages',
+            price: '$20'
+        },
+        {
+            img: '/images/course-2-f-img.jpg',
+            name: 'David Sanders',
+            role: 'Social Computing',
+            description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa ducimus dicta soluta, maiores earum voluptate recusandae dolore!',
+            category: 'Programming',
+            price: 'Free'
+        },
+        {
+            img: '/images/course-3-f-img.jpg',
+            name: 'Jennie King',
+            role: 'Learn Spanish',
+            description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa ducimus dicta soluta, maiores earum voluptate recusandae dolore!',
+            category: 'Languages',
+            price: '$20'
+        },
+        {
+            img: '/images/course-4-f-img.jpg',
+            name: 'Edward Bowman',
+            role: 'Basic Marketing',
+            description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa ducimus dicta soluta, maiores earum voluptate recusandae dolore!',
+            category: 'Business',
+            price: '$40'
+        },
+        {
+            img: '/images/course-5-f-img.jpg',
+            name: 'David Sanders',
+            role: 'Android Developer',
+            description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa ducimus dicta soluta, maiores earum voluptate recusandae dolore!',
+            category: 'Programming',
+            price: 'Free'
+        },
+        {
+            img: '/images/course-6-f-img.jpg',
+            name: 'Jennifer Powell',
+            role: 'Web Designing',
+            description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa ducimus dicta soluta, maiores earum voluptate recusandae dolore!',
+            category: 'Programming',
+            price: 'Free'
+        },
+        {
+            img: '/images/course-12-f-img.jpg',
+            name: 'Edward Bowman',
+            role: 'Financial Modeling',
+            description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa ducimus dicta soluta, maiores earum voluptate recusandae dolore!',
+            category: 'Business',
+            price: '$20'
+        },
+        {
+            img: '/images/course-11-f-img.jpg',
+            name: 'Dave Robbins',
+            role: 'Academic English',
+            description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa ducimus dicta soluta, maiores earum voluptate recusandae dolore!',
+            category: 'Languages',
+            price: 'Free'
+        },
+        {
+            img: '/images/course-7-f-img.jpg',
+            name: 'Kathryn Webb',
+            role: 'Modern Psychology',
+            description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa ducimus dicta soluta, maiores earum voluptate recusandae dolore!',
+            category: 'Business',
+            price: '$40'
+        },
+    ]
 })
