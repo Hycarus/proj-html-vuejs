@@ -137,14 +137,30 @@
       </section>
     </main>
     <footer id="footer">
-      <div class="container">
-
+      <div class="container py-5 w-100 my-border-bottom">
+        <FooterComponent />
+      </div>
+      <div class="d-flex justify-content-between align-items-center my-text-grey container py-4">
+        <div>
+          <span>&#xa9;</span>
+          <span>2017 Qode Interactive, All Rights Reserved</span>
+        </div>
+        <div class="text-uppercase">
+          <span class="px-3">Call +44 300 303 0266</span>
+          <span class="px-3">follow us</span>
+          <span>
+            <i class="fa-brands fa-twitter px-2"></i>
+            <i class="fa-brands fa-instagram px-2"></i>
+            <i class="fa-brands fa-facebook-f ps-2"></i>
+          </span>
+        </div>
       </div>
     </footer>
   </body>
 </template>
 
 <script>
+import FooterComponent from './components/FooterComponent.vue';
 import TabComponent from './components/TabComponent.vue'
 import CardSection6 from './components/CardSection6.vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
@@ -171,6 +187,7 @@ export default {
     SwiperSlide,
     CardSection6,
     TabComponent,
+    FooterComponent,
   },
   data() {
     return {
@@ -329,6 +346,9 @@ header {
 
 #footer {
   background-color: $bg_footer;
-  height: 800px;
+
+  .my-border-bottom {
+    border-bottom: 1px solid $text_dark_grey;
+  }
 }
 </style>

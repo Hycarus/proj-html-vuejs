@@ -755,5 +755,70 @@ export const store = reactive({
             role: 'Teacher',
             description: 'Lorem ipsum oin gravida nibh vel veliauctor aliquenean sollicitudin, lorem quis bibendum auctor, nisi elit consequa',
         },
-    ]
+    ],
+    sectionClient: [
+        '/images/h5-client-1.png',
+        '/images/h5-client-2.png',
+        '/images/h5-client-3.png',
+        '/images/h5-client-4.png',
+        '/images/h5-client-5.png',
+        '/images/h5-client-3.png',
+        '/images/h5-client-2.png',
+    ],
+    footerTop1: [
+        {
+            title: 'logo',
+            img: '/images/footer-logo-1.png',
+            description: 'Providing Life Changing Experiences Through Education. Class That Fit Your Busy Life. Closer to Home',
+            telephone: '1-677-124-44227',
+            time: 'Mon - Sat 8.00 - 18.00',
+        }
+    ],
+    footerTop2: [
+        {
+            title: 'Popular Courses',
+            submenu: [
+                {
+                    subtitle: 'Business English',
+                    name: 'Preston Marshall',
+                },
+                {
+                    subtitle: 'Social Computing',
+                    name: 'David Sanders',
+                },
+                {
+                    subtitle: 'Learn Spanish',
+                    name: 'Jennie King',
+                }
+            ],
+        },
+    ],
+    footerTop3: [
+        {
+            title: 'Support',
+            submenu: [
+                {
+                    subtitle: 'User dashboard',
+                },
+                {
+                    subtitle: 'Contact Us',
+                },
+                {
+                    subtitle: 'FAQ',
+                },
+                {
+                    subtitle: 'Course Offer',
+                },
+                {
+                    subtitle: 'Events',
+                }
+            ],
+        },
+    ],
+    footerTop4: [
+        {
+            title: 'Flexible Learning',
+            img: '/images/footer-img-1.png',
+        }
+    ]  
 })
