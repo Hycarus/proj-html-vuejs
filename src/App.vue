@@ -3,6 +3,20 @@
     <header class="position-fixed w-100" :class="{ 'my-bg-white my-border-bottom': store.scrolled }">
       <HeaderComponent />
     </header>
+    <div id="fixed-icon">
+      <div id="fixed-square" class="my-text-white" v-show="store.scrolled" @click="scrollTop()">
+        <div class="d-flex justify-content-center align-items-center flex-column h-100">
+          <i class="fa-solid fa-chevron-up"></i>
+          <div class="text-uppercase">top</div>
+        </div>
+      </div>
+      <div class="small-square1">
+        <img class="w-100" src="/images/60699165_459440804828391_7177805742290763776_o.png" alt="">
+      </div>
+      <div class="small-square2 d-flex align-items-center justify-content-center ">
+        <i class="fa-solid fa-cart-shopping"></i>
+      </div>
+    </div>
     <div id="carousel">
       <CarouselTop :images="store.carouselTopList" />
     </div>
@@ -23,6 +37,7 @@
               <p>
                 <a class="text-uppercase text-decoration-none my-text-light-blue" href="">
                   Learn More
+                  <i class="fa-solid fa-chevron-right ps-2"></i>
                 </a>
               </p>
             </div>
@@ -220,6 +235,13 @@ export default {
         this.store.scrolled = false
       }
     },
+    scrollTop() {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth"
+      });
+    }
   },
   created() {
     window.addEventListener('scroll', this.scrollHeader)
@@ -373,6 +395,53 @@ header {
     span {
       cursor: pointer;
     }
+  }
+}
+
+#fixed-square {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background-color: $bg_dark_blue;
+  cursor: pointer;
+}
+
+.small-square1 {
+  position: fixed;
+  right: 0;
+  bottom: 150px;
+  width: 30px;
+  height: 30px;
+  box-shadow: -2px 2px 6px 2px #888888;
+  z-index: 400;
+}
+
+.small-square2 {
+  position: fixed;
+  right: 0;
+  bottom: 100px;
+  width: 30px;
+  height: 30px;
+  box-shadow: -2px 2px 6px 2px #888888;
+  z-index: 400;
+  background-color: $bg-white;
+
+  i {
+    color: $text_pink;
+  }
+}
+
+a {
+  &:hover i {
+    opacity: 1;
+    translate: 2px 0;
+  }
+
+  i {
+    opacity: 0;
+    transition: all 0.3s;
   }
 }
 </style>
