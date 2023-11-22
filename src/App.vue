@@ -1,5 +1,5 @@
 <template>
-  <header class="position-fixed w-100">
+  <header class="position-fixed w-100" :class="{ 'my-bg-white': store.scrolled }">
     <HeaderComponent />
   </header>
   <div id="carousel">
@@ -110,7 +110,17 @@ export default {
         behavior: "smooth"
       });
     },
+    scrollHeader() {
+      if (window.scrollY >= 790) {
+        this.store.scrolled = true
+      } else if (window.scrollY < 790) {
+        this.store.scrolled = false
+      }
+    },
   },
+  created() {
+    window.addEventListener('scroll', this.scrollHeader)
+  }
 }
 </script>
 
@@ -119,6 +129,10 @@ export default {
 
 .my-text-white {
   color: $text_white;
+}
+
+.my-bg-white {
+  background-color: $bg_white;
 }
 
 .my-text-light-blue {
@@ -131,7 +145,7 @@ export default {
 
 header {
   z-index: 1000;
-  margin-top: 10px;
+  padding-top: 10px;
   height: 100px;
 }
 
@@ -180,4 +194,5 @@ header {
 .pallino.terzo {
   bottom: 50px;
   left: 53%;
-}</style>
+}
+</style>

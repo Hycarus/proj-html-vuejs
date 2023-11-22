@@ -661,4 +661,5 @@ export const store = reactive({
         },
     ],
     activeIndex2: 1,
+    scrolled: false,
 })
