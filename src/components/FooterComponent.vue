@@ -112,7 +112,7 @@ ul {
 }
 
 
-.hover img {
+img.w-100 {
     cursor: pointer;
 }
 </style>

@@ -350,5 +350,19 @@ header {
   .my-border-bottom {
     border-bottom: 1px solid $text_dark_grey;
   }
+
+  i {
+    cursor: pointer;
+
+    &:hover {
+      color: $text_light_blue;
+    }
+  }
+
+  .my-text-grey {
+    span {
+      cursor: pointer;
+    }
+  }
 }
 </style>
