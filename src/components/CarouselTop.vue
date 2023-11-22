@@ -2,7 +2,11 @@
     <div class="d-flex align-items-center justify-content-center position-relative">
         <div class="btn-left" @click="prev">
         </div>
-        <img class="w-100" :src="images[this.store.activeIndex]" alt="slider">
+        <div>
+            <div>
+                <img class="w-100" :src="images[this.store.activeIndex]" alt="slider">
+            </div>
+        </div>
         <div class="btn-right" @click="next">
         </div>
     </div>
@@ -11,7 +15,7 @@
 <script>
     import {store} from '../data/store.js'
     export default {
-        name: 'Carousel',
+        name: 'CarouselTop',
         data(){
             return{
                 store,
@@ -19,6 +23,7 @@
         },
         props: {
             images: Array,
+            paragraph: String,
         },
         methods:{
             prev(){

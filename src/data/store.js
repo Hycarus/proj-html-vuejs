@@ -636,5 +636,29 @@ export const store = reactive({
             title: 'DIY&Craft',
             img: '/images/h5-custom-icon-6.png',
         },
-    ]
+    ],
+    thirdSection:[
+        {
+            img: '/images/testimonials-standard-6.png',
+            name: 'Molly Simon',
+            role: 'Teacher',
+            description: 'Mroin gravida nibh vel veliauctor aliquenean sollicitudin, lorem quis bibendum auctor.nisi elit consequat ipsutis sem nibh id elit. Duis sed odio sit amet nivulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus',
+            id: 1,
+        },
+        {
+            img: '/images/testimonials-standard-2.png',
+            name: 'Joan Collins',
+            role: 'Student',
+            description: 'Mroin gravida nibh vel veliauctor aliquenean sollicitudin, lorem quis bibendum auctor.nisi elit consequat ipsutis sem nibh id elit. Duis sed odio sit amet nivulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus',
+            id: 2,
+        },
+        {
+            img: '/images/testimonials-standard-1.png',
+            name: 'Virginia Foster',
+            role: 'Student',
+            description: 'Mroin gravida nibh vel veliauctor aliquenean sollicitudin, lorem quis bibendum auctor.nisi elit consequat ipsutis sem nibh id elit. Duis sed odio sit amet nivulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus',
+            id: 3,
+        },
+    ],
+    activeIndex2: 1,
 })

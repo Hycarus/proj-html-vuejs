@@ -1,6 +1,8 @@
 <template>
     <div class="card" v-for="img in store.firstSection">
-        <div><img :src="img.img" :alt="img.title"></div>
+        <div>
+            <img :src="img.img" :alt="img.title">
+        </div>
         <h4>{{ img.title }}</h4>
     </div>
 </template>
