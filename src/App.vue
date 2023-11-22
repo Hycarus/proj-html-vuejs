@@ -1,107 +1,126 @@
 <template>
-  <header class="position-fixed w-100" :class="{ 'my-bg-white': store.scrolled }">
-    <HeaderComponent />
-  </header>
-  <div id="carousel">
-    <CarouselTop :images="store.carouselTopList" />
-  </div>
-  <main>
-    <div id="section1">
-      <section class="container">
-        <div class="d-flex">
-          <CardComponent />
-        </div>
-        <div class="d-flex align-items-center justify-content-center w-100">
+  <body>
+    <header class="position-fixed w-100" :class="{ 'my-bg-white': store.scrolled }">
+      <HeaderComponent />
+    </header>
+    <div id="carousel">
+      <CarouselTop :images="store.carouselTopList" />
+    </div>
+    <main>
+      <div id="section1">
+        <section class="container">
+          <div class="d-flex">
+            <CardComponent />
+          </div>
+          <div class="d-flex align-items-center justify-content-center w-100">
+            <div class="w-50">
+              <h2>The Trusted Name for In-Home Tutoring.</h2>
+              <p class="my-text-dark-grey">
+                Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit
+                consequat
+                ipsutis sem nibh id eis sed odio sit amet nibh vulputate cursus mauris.
+              </p>
+              <p>
+                <a class="text-uppercase text-decoration-none my-text-light-blue" href="">
+                  Learn More
+                </a>
+              </p>
+            </div>
+            <div>
+              <img class="w-100" src="/images/h5-img-1.jpg" alt="">
+            </div>
+          </div>
+        </section>
+      </div>
+      <section id="section2" class="container">
+        <div class="d-flex align-items-center justify-content-center">
+          <div>
+            <img class="w-100" src="/images/h5-img-2.jpg" alt="">
+          </div>
           <div class="w-50">
-            <h2>The Trusted Name for In-Home Tutoring.</h2>
+            <h2>
+              Empowering Children to Reach Their Potential.
+            </h2>
             <p class="my-text-dark-grey">
               Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat
-              ipsutis sem nibh id eis sed odio sit amet nibh vulputate cursus mauris.
+              ipsutis sem nibh id eis sed odio sit amet nibh vulputate.
             </p>
-            <p>
-              <a class="text-uppercase text-decoration-none my-text-light-blue" href="">
-                Learn More
-              </a>
-            </p>
-          </div>
-          <div>
-            <img class="w-100" src="/images/h5-img-1.jpg" alt="">
+            <div class="d-flex w-100">
+              <p class="my-text-light-blue w-50 d-flex flex-column ">
+                <span class="fs-1">168</span>
+                <span class="fs-4">User Story</span>
+              </p>
+              <p class="my-text-light-blue w-50 d-flex flex-column">
+                <span class="fs-1">347</span>
+                <span class="fs-4">Events</span>
+              </p>
+            </div>
           </div>
         </div>
       </section>
-    </div>
-    <section id="section2" class="container">
-      <div class="d-flex align-items-center justify-content-center">
-        <div>
-          <img class="w-100" src="/images/h5-img-2.jpg" alt="">
-        </div>
-        <div class="w-50">
-          <h2>
-            Empowering Children to Reach Their Potential.
-          </h2>
-          <p class="my-text-dark-grey">
-            Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat
-            ipsutis sem nibh id eis sed odio sit amet nibh vulputate.
-          </p>
-          <div class="d-flex w-100">
-            <p class="my-text-light-blue w-50 d-flex flex-column ">
-              <span class="fs-1">168</span>
-              <span class="fs-4">User Story</span>
-            </p>
-            <p class="my-text-light-blue w-50 d-flex flex-column">
-              <span class="fs-1">347</span>
-              <span class="fs-4">Events</span>
-            </p>
+      <section id="section3" class="w-100 ">
+        <div class="container h-100 position-relative ">
+          <div class="row flex-nowrap h-100 overflow-x-hidden" ref="carousel">
+            <CarouselMid :name="person.name" :role="person.role" :paragraph="person.description" :images="person.img"
+              v-for="(person, index) in store.thirdSection" />
+          </div>
+          <div class="pallino primo"
+            @click.stop="scroll(0, 0), this.pallino1Flag = true, this.pallino2Flag = false, this.pallino3Flag = false"
+            :class="{ 'active': this.pallino1Flag }">
+          </div>
+          <div class="pallino secondo"
+            @click.stop="scroll(1320, 0), this.pallino2Flag = true, this.pallino1Flag = false, this.pallino3Flag = false"
+            :class="{ 'active': this.pallino2Flag }">
+          </div>
+          <div class="pallino terzo"
+            @click.stop="scroll(2640, 0), this.pallino3Flag = true, this.pallino2Flag = false, this.pallino1Flag = false"
+            :class="{ 'active': this.pallino3Flag }">
           </div>
         </div>
-      </div>
-    </section>
-    <section id="section3" class="w-100 ">
-      <div class="container h-100 position-relative ">
-        <div class="row flex-nowrap h-100 overflow-x-hidden" ref="carousel">
-          <CarouselMid :name="person.name" :role="person.role" :paragraph="person.description" :images="person.img"
-            v-for="(person, index) in store.thirdSection" />
+      </section>
+      <section id="section4" class="py-5 w-100 fs-5">
+        <Section4 />
+      </section>
+      <section id="section5" class="py-5">
+        <div class="container">
+          <h1 class="text-center">
+            Popular Online Courses
+          </h1>
+          <p class="text-center fs-5 pb-5">
+            Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat
+            ipsutis sem nibh id elit
+          </p>
+          <swiper id="my-pagination" :modules="modules" slides-per-view="3" :space-between="40"
+            :pagination="{ clickable: true }" :grabCursor="true" :loop="true" :navigation="true">
+            <swiper-slide class="d-flex" v-for="element in store.section5Card">
+              <CardSliderComponent :description="element.description" :category="element.category" :name="element.name"
+                :role="element.role" :price="element.price" :image="element.img" />
+            </swiper-slide>
+          </swiper>
         </div>
-        <div class="pallino primo"
-          @click.stop="scroll(0, 0), this.pallino1Flag = true, this.pallino2Flag = false, this.pallino3Flag = false"
-          :class="{ 'active': this.pallino1Flag }">
+      </section>
+      <section id="section6">
+        <div class="container py-5">
+          <div class="text-center py-5">
+            <h1>The Best Tutors in Town</h1>
+            <p>Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat
+              ipsutis sem nibh id elit</p>
+          </div>
+          <div class="d-flex justify-content-between align-items-center ">
+            <CardSection6 v-for="person in store.section6Card" :image="person.img" :name="person.name" :role="person.role"
+              :description="person.description" />
+          </div>
         </div>
-        <div class="pallino secondo"
-          @click.stop="scroll(1320, 0), this.pallino2Flag = true, this.pallino1Flag = false, this.pallino3Flag = false"
-          :class="{ 'active': this.pallino2Flag }">
-        </div>
-        <div class="pallino terzo"
-          @click.stop="scroll(2640, 0), this.pallino3Flag = true, this.pallino2Flag = false, this.pallino1Flag = false"
-          :class="{ 'active': this.pallino3Flag }">
-        </div>
-      </div>
-    </section>
-    <section id="section4" class="py-5 w-100 fs-5">
-      <Section4 />
-    </section>
-    <section id="section5" class="py-5">
-      <div class="container">
-        <h1 class="text-center">
-          Popular Online Courses
-        </h1>
-        <p class="text-center fs-5 pb-5">
-          Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat
-          ipsutis sem nibh id elit
-        </p>
-        <swiper id="my-pagination" :modules="modules" slides-per-view="3" :space-between="40"
-          :pagination="{ clickable: true }" :grabCursor="true" :loop="true" :navigation="true">
-          <swiper-slide class="d-flex" v-for="element in store.section5Card">
-            <CardSliderComponent :description="element.description" :category="element.category" :name="element.name"
-              :role="element.role" :price="element.price" :image="element.img" />
-          </swiper-slide>
-          <!-- <div class="my-pagination"></div> -->
-        </swiper>
-      </div>
-    </section>
-  </main>
+      </section>
+      <section id="section7">
+
+      </section>
+    </main>
+  </body>
 </template>
 
 <script>
+import CardSection6 from './components/CardSection6.vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/scss';
 import 'swiper/scss/pagination';
@@ -124,6 +143,7 @@ export default {
     CardSliderComponent,
     Swiper,
     SwiperSlide,
+    CardSection6,
   },
   data() {
     return {
@@ -160,6 +180,12 @@ export default {
 
 <style lang="scss" scoped>
 @use './assets/styles/partials/_variables.scss' as *;
+
+body {
+  background-image: url('/images/page-background-img.png');
+  background-repeat: repeat;
+  background-size: contain;
+}
 
 .my-text-white {
   color: $text_white;
@@ -200,6 +226,10 @@ header {
   height: 700px;
 }
 
+#section4 {
+  background-color: $bg_white;
+}
+
 .pallino {
   width: 12px;
   height: 12px;
@@ -236,9 +266,7 @@ header {
 
 #section5 {
   border-top: 1px solid $text_light_grey;
-  background-image: url('/images/page-background-img.png');
-  background-repeat: no-repeat;
-  background-size: cover;
+
   border-bottom: 1px solid $text_light_grey;
 }
 
@@ -260,5 +288,10 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#section6 {
+  border-bottom: 1px solid $text_light_grey;
+  background-color: $bg_white;
 }
 </style>

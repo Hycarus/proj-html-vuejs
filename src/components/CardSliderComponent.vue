@@ -45,6 +45,7 @@ export default {
 
 .my-border {
     border: 1px solid $text_light_grey;
+    background-color: $bg_white;
 }
 
 .my-text-white {

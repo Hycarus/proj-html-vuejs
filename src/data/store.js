@@ -735,5 +735,25 @@ export const store = reactive({
             category: 'Business',
             price: '$40'
         },
+    ],
+    section6Card: [
+        {
+            img: '/images/h5-team-member-1.jpg',
+            name: 'Brenda Harris',
+            role: 'Teacher',
+            description: 'Lorem ipsum oin gravida nibh vel veliauctor aliquenean sollicitudin, lorem quis bibendum auctor, nisi elit consequa',
+        },
+        {
+            img: '/images/h5-team-member-2.jpg',
+            name: 'Lisa Griffin',
+            role: 'Teacher',
+            description: 'Lorem ipsum oin gravida nibh vel veliauctor aliquenean sollicitudin, lorem quis bibendum auctor, nisi elit consequa',
+        },
+        {
+            img: '/images/h5-team-member-3.jpg',
+            name: 'Victor Green',
+            role: 'Teacher',
+            description: 'Lorem ipsum oin gravida nibh vel veliauctor aliquenean sollicitudin, lorem quis bibendum auctor, nisi elit consequa',
+        },
     ]
 })
