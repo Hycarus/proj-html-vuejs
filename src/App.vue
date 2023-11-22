@@ -1,6 +1,6 @@
 <template>
   <body>
-    <header class="position-fixed w-100" :class="{ 'my-bg-white': store.scrolled }">
+    <header class="position-fixed w-100" :class="{ 'my-bg-white my-border-bottom': store.scrolled }">
       <HeaderComponent />
     </header>
     <div id="carousel">
@@ -91,7 +91,8 @@
             ipsutis sem nibh id elit
           </p>
           <swiper id="my-pagination" :modules="modules" slides-per-view="3" :space-between="40"
-            :pagination="{ clickable: true }" :grabCursor="true" :loop="true" :navigation="true">
+            :pagination="{ clickable: true, dynamicBullets: true, dynamicMainBullets: 3 }" :grabCursor="true" :loop="true"
+            :navigation="true">
             <swiper-slide class="d-flex" v-for="element in store.section5Card">
               <CardSliderComponent :description="element.description" :category="element.category" :name="element.name"
                 :role="element.role" :price="element.price" :image="element.img" />
@@ -128,7 +129,11 @@
       <section id="section8" class="py-5">
         <div class="container">
           <swiper slidesPerView="5" :grabCursor="true" :spaceBetween="30" :loop="true" :navigation="true"
-            :modules="modules">
+            :modules="modules" :autoplay="{
+              delay: 2500,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }">
             <swiper-slide v-for="client in store.sectionClient">
               <div><img :src="client" alt=""></div>
             </swiper-slide>
@@ -166,7 +171,7 @@ import CardSection6 from './components/CardSection6.vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/scss';
 import 'swiper/scss/pagination';
-import { Pagination } from 'swiper/modules';
+import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 import CardSliderComponent from './components/CardSliderComponent.vue';
 import Section4 from './components/Section4.vue'
 import CarouselMid from './components/CarouselMid.vue';
@@ -195,7 +200,7 @@ export default {
       pallino1Flag: true,
       pallino2Flag: false,
       pallino3Flag: false,
-      modules: [Pagination],
+      modules: [Pagination, Autoplay, Navigation],
       click: false,
     }
   },
@@ -249,6 +254,10 @@ body {
 
 .my-text-grey {
   color: $text_grey;
+}
+
+.my-border-bottom {
+  border-bottom: 1px solid $text_light_grey;
 }
 
 header {
@@ -332,6 +341,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 10px;
 }
 
 

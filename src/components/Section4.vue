@@ -4,7 +4,7 @@
             <ul class=" list-unstyled h-100 my-text-dark-grey">
                 <li class="h-calc ps-3" :class="{ 'active': liFlag1 }"
                     @click="liFlag1 = true, liFlag2 = false, liFlag3 = false, liFlag4 = false, liFlag5 = false, liFlag6 = false">
-                    What we do</li>
+                    What We Do</li>
                 <li class="h-calc ps-3" :class="{ 'active': liFlag2 }"
                     @click="liFlag1 = false, liFlag2 = true, liFlag3 = false, liFlag4 = false, liFlag5 = false, liFlag6 = false">
                     Degree Programme</li>
@@ -204,13 +204,13 @@ export default {
 
     &:hover {
         color: $text_light_blue;
-        border-left: 5px solid $text_light_blue;
+        border-left: 7px solid $text_light_blue;
     }
 }
 
 .active {
     color: $text_light_blue;
-    border-left: 5px solid $text_light_blue;
+    border-left: 7px solid $text_light_blue;
 }
 
 .lista-personalizzata::before {
