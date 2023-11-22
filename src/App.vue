@@ -112,14 +112,40 @@
           </div>
         </div>
       </section>
-      <section id="section7">
-
+      <section id="section7" class="py-5">
+        <div class="container">
+          <h1 class="text-center">
+            Pricing Plans
+          </h1>
+          <p class="text-center pb-5">
+            Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci
+          </p>
+        </div>
+        <div>
+          <TabComponent />
+        </div>
+      </section>
+      <section id="section8" class="py-5">
+        <div class="container">
+          <swiper slidesPerView="5" :grabCursor="true" :spaceBetween="30" :loop="true" :navigation="true"
+            :modules="modules">
+            <swiper-slide v-for="client in store.sectionClient">
+              <div><img :src="client" alt=""></div>
+            </swiper-slide>
+          </swiper>
+        </div>
       </section>
     </main>
+    <footer id="footer">
+      <div class="container">
+
+      </div>
+    </footer>
   </body>
 </template>
 
 <script>
+import TabComponent from './components/TabComponent.vue'
 import CardSection6 from './components/CardSection6.vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/scss';
@@ -144,6 +170,7 @@ export default {
     Swiper,
     SwiperSlide,
     CardSection6,
+    TabComponent,
   },
   data() {
     return {
@@ -290,8 +317,18 @@ header {
   align-items: center;
 }
 
+
 #section6 {
   border-bottom: 1px solid $text_light_grey;
   background-color: $bg_white;
+}
+
+#section8 {
+  background-color: $bg_white;
+}
+
+#footer {
+  background-color: $bg_footer;
+  height: 800px;
 }
 </style>
