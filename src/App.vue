@@ -62,11 +62,15 @@
             </p>
             <div class="d-flex w-100">
               <p class="my-text-light-blue w-50 d-flex flex-column ">
-                <span class="fs-1">168</span>
+                <span class="fs-1"><vue3-autocounter ref='firstCounter' :startAmount='0' :endAmount='168' :duration='2'
+                    :autoinit='false' /></span>
                 <span class="fs-4">User Story</span>
               </p>
               <p class="my-text-light-blue w-50 d-flex flex-column">
-                <span class="fs-1">347</span>
+                <span class="fs-1">
+                  <vue3-autocounter ref='secondCounter' :startAmount='0' :endAmount='347' :duration='2'
+                    :autoinit='false' />
+                </span>
                 <span class="fs-4">Events</span>
               </p>
             </div>
@@ -180,6 +184,7 @@
 </template>
 
 <script>
+import Vue3Autocounter from 'vue3-autocounter';
 import FooterComponent from './components/FooterComponent.vue';
 import TabComponent from './components/TabComponent.vue'
 import CardSection6 from './components/CardSection6.vue';
@@ -208,6 +213,7 @@ export default {
     CardSection6,
     TabComponent,
     FooterComponent,
+    Vue3Autocounter,
   },
   data() {
     return {
@@ -217,6 +223,7 @@ export default {
       pallino3Flag: false,
       modules: [Pagination, Autoplay, Navigation],
       click: false,
+      startCounter: false,
     }
   },
   methods: {
@@ -241,10 +248,19 @@ export default {
         left: 0,
         behavior: "smooth"
       });
-    }
+    },
+    startMyCounter() {
+      const scrollYPosition = window.scrollY;
+      if (scrollYPosition >= 1200 && !this.startCounter) {
+        this.$refs.firstCounter.start()
+        this.$refs.secondCounter.start()
+        this.startCounter = true;
+      }
+    },
   },
   created() {
     window.addEventListener('scroll', this.scrollHeader)
+    window.addEventListener('scroll', this.startMyCounter)
   },
 }
 </script>

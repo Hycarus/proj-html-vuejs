@@ -2,7 +2,8 @@
     <div class="d-flex align-items-center justify-content-center position-relative">
 
         <swiper slidesPerView="1" :pagination="{ clickable: true, dynamicBullets: true, dynamicMainBullets: 3 }"
-            :grabCursor="true" :speed="2000" :loop="true" :navigation="true" :modules="modules" :autoplay="{
+            :grabCursor="true" :speed="2000" :preload="false" :lazyLoading="true" :loop="true" :navigation="true"
+            :modules="modules" :autoplay="{
                 delay: 3000,
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true,
@@ -61,7 +62,6 @@ export default {
 
 <style lang="scss" scoped>
 @use '../assets/styles/partials/_variables.scss' as *;
-
 
 #info {
     top: 50%;
