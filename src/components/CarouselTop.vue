@@ -5,8 +5,8 @@
             :grabCursor="true" :speed="2000" :preload="false" :lazyLoading="true" :loop="true" :navigation="true"
             :modules="modules" :autoplay="{
                 delay: 3000,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true,
+                disableOnInteraction: true,
+                pauseOnMouseEnter: false,
             }">
             <swiper-slide v-for="element in store.carouselTopInfo">
                 <div class="position-relative">
@@ -23,7 +23,7 @@
                         <button class="btn my-btn" v-show="element.button != ''">
                             {{ element.button }}
                         </button>
-                        <div class="my-circle my-btn justify-content-center m-auto align-items-center"
+                        <div class=" my-btn justify-content-center m-auto align-items-center my-circle"
                             v-show="element.button === ''">
                             <i class="fa-solid fa-play"></i>
                         </div>
@@ -73,14 +73,14 @@ export default {
 
 .my-btn {
     text-align: center;
-    visibility: hidden;
+    opacity: 0;
     animation: appaer 0.3s linear forwards;
     animation-delay: 2.6s;
 }
 
 .my-description {
     text-align: center;
-    visibility: hidden;
+    opacity: 0;
     animation: appaer 0.3s linear forwards;
     animation-delay: 2.3s;
 }
@@ -88,7 +88,7 @@ export default {
 .my-title {
     font-size: 70px;
     text-align: center;
-    visibility: hidden;
+    opacity: 0;
     animation: appaer 0.3s linear forwards;
     animation-delay: 2s;
 }
@@ -99,7 +99,7 @@ export default {
     }
 
     to {
-        visibility: visible;
+        opacity: 1;
         transform: translate(0, 0);
     }
 }
@@ -123,8 +123,9 @@ export default {
     transition: 0.2s;
 
     &:hover {
-        transform: scale(1.1);
+        transform: scale(1.1) !important;
     }
+
 }
 
 button {
