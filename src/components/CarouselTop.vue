@@ -1,94 +1,138 @@
 <template>
     <div class="d-flex align-items-center justify-content-center position-relative">
-        <div class="btn-left" @click="prev">
-        </div>
-        <div>
-            <div>
-                <img class="w-100" :src="images[this.store.activeIndex]" alt="slider">
-            </div>
-        </div>
-        <div class="btn-right" @click="next">
-        </div>
+
+        <swiper slidesPerView="1" :pagination="{ clickable: true, dynamicBullets: true, dynamicMainBullets: 3 }"
+            :grabCursor="true" :speed="2000" :loop="true" :navigation="true" :modules="modules" :autoplay="{
+                delay: 3000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            }">
+            <swiper-slide v-for="element in store.carouselTopInfo">
+                <div class="position-relative">
+                    <div>
+                        <img class="w-100" :src="element.img" alt="slider">
+                    </div>
+                    <div class="position-absolute" id="info">
+                        <h1 class="py-4 my-title">
+                            {{ element.title }}
+                        </h1>
+                        <p class="py-4 my-description">
+                            {{ element.description }}
+                        </p>
+                        <button class="btn my-btn" v-show="element.button != ''">
+                            {{ element.button }}
+                        </button>
+                        <div class="my-circle my-btn justify-content-center m-auto align-items-center"
+                            v-show="element.button === ''">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </swiper-slide>
+        </swiper>
     </div>
 </template>
 
 <script>
-    import {store} from '../data/store.js'
-    export default {
-        name: 'CarouselTop',
-        data(){
-            return{
-                store,
-            }
-        },
-        props: {
-            images: Array,
-            paragraph: String,
-        },
-        methods:{
-            prev(){
-                this.store.activeIndex = (this.store.activeIndex - 1 + this.images.length) % this.images.length
-            },
-            next(){
-                this.store.activeIndex = (this.store.activeIndex + 1) % this.images.length
-            }
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/scss';
+import 'swiper/scss/pagination';
+import { Pagination, Navigation, Autoplay } from 'swiper/modules';
+import { store } from '../data/store.js'
+export default {
+    name: 'Carousel',
+    data() {
+        return {
+            store,
+            modules: [Pagination, Autoplay, Navigation],
         }
+    },
+    components: {
+        Swiper,
+        SwiperSlide,
+    },
+
+    methods: {
+
     }
+}
 </script>
 
 <style lang="scss" scoped>
 @use '../assets/styles/partials/_variables.scss' as *;
 
-.btn-left, .btn-right {
-    width: 150px;
-    height: 150px;
+
+#info {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: $text_white;
+}
+
+.my-btn {
+    text-align: center;
+    visibility: hidden;
+    animation: appaer 0.3s linear forwards;
+    animation-delay: 2.6s;
+}
+
+.my-description {
+    text-align: center;
+    visibility: hidden;
+    animation: appaer 0.3s linear forwards;
+    animation-delay: 2.3s;
+}
+
+.my-title {
+    font-size: 70px;
+    text-align: center;
+    visibility: hidden;
+    animation: appaer 0.3s linear forwards;
+    animation-delay: 2s;
+}
+
+@keyframes appaer {
+    from {
+        transform: translate(0, 50%);
+    }
+
+    to {
+        visibility: visible;
+        transform: translate(0, 0);
+    }
+}
+
+.btn {
+    background-color: $bg_blue;
+    border-radius: 0;
+    color: $text_white;
+    padding: 10px 30px;
+}
+
+.my-circle {
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    margin: -50px 0;
-    position: absolute;
-    bottom: 50%;
+    background-color: $bg_white;
+    color: $text_dark;
+    font-size: 30px;
+    display: flex;
     cursor: pointer;
-    z-index: 999;
+    transition: 0.2s;
+
+    &:hover {
+        transform: scale(1.1);
+    }
 }
-.btn-right {
-    right: 0;
-    margin-right: 0;
-}
-.btn-left {
-    left: 0;
-    margin-left: 0;
-}
-.btn-left::after {
-    content: '';
-    width: 50px;
-    height: 50px;
-    border-top: 3px solid $text_white;
-    border-left: 3px solid $text_white;
-    display: block;
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%) rotate(-45deg);
-    transition: all 0.3s;
-}
-.btn-left:hover::after{
-    border-top: 3px solid $text_grey;
-    border-left: 3px solid $text_grey;
-}
-.btn-right::before {
-    content: '';
-    width: 50px;
-    height: 50px;
-    border-top: 3px solid $text_white;
-    border-left: 3px solid $text_white;
-    display: block;
-    position: absolute;
-    bottom: 35%;
-    left: 50%;
-    transform: translate(-50%) rotate(135deg);
-    transition: all 0.3s;
-}
-.btn-right:hover::before{
-    border-top-color: $text_grey;
-    border-left-color: $text_grey;
+
+button {
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+        background-color: $bg_dark_blue;
+    }
 }
 </style>

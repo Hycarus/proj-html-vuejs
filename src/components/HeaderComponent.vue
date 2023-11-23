@@ -1,8 +1,9 @@
 <template>
     <div class="container d-flex align-items-center justify-content-evenly w-100">
         <div>
-            <img class="w-50" src="/images/logo-light.png" alt="logo-header" v-show="store.scrolled === false">
-            <img class="w-50" src="/images/logo-default.png" alt="logo-header" v-show="store.scrolled">
+            <img class="w-50 my-cursor-pointer" src="/images/logo-light.png" alt="logo-header"
+                v-show="store.scrolled === false">
+            <img class="w-50 my-cursor-pointer" src="/images/logo-default.png" alt="logo-header" v-show="store.scrolled">
         </div>
         <div class="d-flex align-items-center justify-content-center ">
             <ul class="d-flex text-uppercase my-text-white m-0">
@@ -112,6 +113,14 @@ export default {
 
 .my-text-white {
     color: $text_white;
+}
+
+.my-cursor-pointer {
+    cursor: pointer;
+}
+
+i {
+    cursor: pointer;
 }
 
 .text-title {

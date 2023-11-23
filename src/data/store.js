@@ -5,6 +5,26 @@ export const store = reactive({
         '/images/h5-slide-2-background.jpg',
         '/images/h5-slide-3-background.jpg',
     ],
+    carouselTopInfo: [
+        {
+            img: '/images/h5-slide-1-background.jpg',
+            title: 'Accelerate Your Career',
+            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore dolores veritatis veniam, atque eligendi tempora quia fugit a magnam mollitia placeat libero, error esse iure fuga, itaque rem.',
+            button: 'Register Now',
+        },
+        {
+            img: '/images/h5-slide-2-background.jpg',
+            title: 'Premium Education',
+            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore dolores veritatis veniam, atque eligendi tempora quia fugit a magnam mollitia placeat libero, error esse iure fuga, itaque rem.',
+            button: '',
+        },
+        {
+            img: '/images/h5-slide-3-background.jpg',
+            title: 'Contemporary Ideas',
+            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore dolores veritatis veniam, atque eligendi tempora quia fugit a magnam mollitia placeat libero, error esse iure fuga, itaque rem.',
+            button: 'Register Now',
+        },
+    ],
     activeIndex: 0,
     nav: [
             {

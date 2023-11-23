@@ -18,7 +18,7 @@
       </div>
     </div>
     <div id="carousel">
-      <CarouselTop :images="store.carouselTopList" />
+      <CarouselTop />
     </div>
     <main>
       <div id="section1">
@@ -143,7 +143,7 @@
       </section>
       <section id="section8" class="py-5">
         <div class="container">
-          <swiper slidesPerView="5" :grabCursor="true" :spaceBetween="30" :loop="true" :navigation="true"
+          <swiper slidesPerView="5" :grabCursor="true" :spaceBetween="30" :speed="2000" :loop="true" :navigation="true"
             :modules="modules" :autoplay="{
               delay: 2500,
               disableOnInteraction: false,
