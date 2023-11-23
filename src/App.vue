@@ -62,13 +62,13 @@
             </p>
             <div class="d-flex w-100">
               <p class="my-text-light-blue w-50 d-flex flex-column ">
-                <span class="fs-1"><vue3-autocounter ref='firstCounter' :startAmount='0' :endAmount='168' :duration='2'
+                <span class="fs-1"><vue3-autocounter ref='firstCounter' :startAmount='0' :endAmount='168' :duration='1'
                     :autoinit='false' /></span>
                 <span class="fs-4">User Story</span>
               </p>
               <p class="my-text-light-blue w-50 d-flex flex-column">
                 <span class="fs-1">
-                  <vue3-autocounter ref='secondCounter' :startAmount='0' :endAmount='347' :duration='2'
+                  <vue3-autocounter ref='secondCounter' :startAmount='0' :endAmount='347' :duration='1'
                     :autoinit='false' />
                 </span>
                 <span class="fs-4">Events</span>
